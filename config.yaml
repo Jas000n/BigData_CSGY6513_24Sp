@@ -1,0 +1,16 @@
+newsgroups:
+  data_path: ./data
+
+another_dataset:
+  data_path: ./data
+
+annoy:
+  n_trees: 10
+
+faiss:
+  # 在这里提供faiss的配置
+
+hnsw:
+  # 在这里提供hnsw的配置
+
+k: 10
