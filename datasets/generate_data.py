@@ -5,7 +5,7 @@ def generate_matrices(data_shape, sparsity, use_vector, data_type, precision,mea
     Generates two matrices or vectors based on the provided specifications.
 
     Args:
-        data_scale (tuple): A tuple containing two tuples, each specifies the dimensions
+        data_shape (tuple): A tuple containing two tuples, each specifies the dimensions
                             (ROWS, COLS) of the matrices to be generated, in format like ((1000, 500), (500, 1000))
         sparsity (float): The fraction of elements in the matrices that are zero.
         use_vector (bool): If True, generates vectors instead of matrices.

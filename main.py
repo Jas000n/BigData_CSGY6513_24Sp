@@ -7,7 +7,7 @@ def main():
                         help="what algorithm(s) to use")
     parser.add_argument('--dataset', type=str, choices=['provided', 'generated'], required=True,
                         help="what dataset to use")
-    parser.add_argument('--data_shape', type=int, nargs=4,  # 接收四个整数
+    parser.add_argument('--data_shape', type=int, nargs=4,
                         default=[1000, 500, 500, 1000],
                         help="scale of data, in format Matrix1(ROWS, COLS) Matrix2(ROWS, COLS),"
                              " Example: --data_scale 1000 500 500 1000")
