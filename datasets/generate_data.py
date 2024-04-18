@@ -11,6 +11,8 @@ def generate_matrices(data_shape, sparsity, use_vector, data_type, precision,mea
         use_vector (bool): If True, generates vectors instead of matrices.
         data_type (str): 'binary' for binary matrices, 'normal' for normal continuous values.
         precision (str): 'float' for floating point numbers, 'int' for integers.
+        mean (float): Mean of the generated matrices.
+        deviation (float): Standard deviation of the generated matrices.
 
 
     Returns:
@@ -51,8 +53,8 @@ def generate_matrices(data_shape, sparsity, use_vector, data_type, precision,mea
 if __name__ == '__main__':
     # Example usage:
     data_scale = ((1000, 500), (500, 1000))  # Dimensions for two matrices
-    sparsity = 0 # 30% elements are zero
-    use_vector = True  # Generate matrices, not vectors
+    sparsity = 0.3 # 30% elements are zero
+    use_vector = False  # Generate matrices, not vectors
     data_type = 'normal'  # Normal continuous values
     precision = 'float'  # Floating point numbers
 
