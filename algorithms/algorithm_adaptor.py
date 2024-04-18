@@ -1,12 +1,19 @@
-class AlgorithmAdaptor:
-    def __init__(self, config):
-        self.config = config
+import time
 
-    def fit(self, data):
-        raise NotImplementedError
 
-    def query(self, data, k):
-        raise NotImplementedError
+class algorithm_adaptor:
+    def __init__(self, name):
+        self.name = name
 
-    def evaluate(self, data):
-        raise NotImplementedError
+    def inner_product_estimate(self, matrix1, matrix2):
+        start_time = time.time()
+
+        # Placeholder for the actual inner product estimation logic
+        # Here you can implement your algorithm to estimate the inner product
+        # This is just a dummy implementation
+        estimate = sum(matrix1[i] * matrix2[i] for i in range(len(matrix1)))
+
+        end_time = time.time()
+        execution_time = end_time - start_time
+
+        return estimate, execution_time
