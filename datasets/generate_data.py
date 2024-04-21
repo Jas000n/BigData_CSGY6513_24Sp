@@ -16,7 +16,7 @@ def generate_matrices(data_shape, sparsity, use_vector, data_type, precision,mea
 
 
     Returns:
-        tuple: Two numpy arrays as specified by the input parameters.
+        tuple: Two numpy arrays as speciwfied by the input parameters.
     """
     def create_matrix(dimensions, sparsity, is_vector, data_type, precision):
         rows, cols = dimensions

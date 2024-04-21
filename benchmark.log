@@ -1,0 +1,31 @@
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Algorithm: Weighted MinHash
+INFO:root:Metrics: {'RMSE': 0.06490398933237684, 'MAE': 0.04535490755797194}
+INFO:root:Average Execution Time: 1.2227211136817933 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Algorithm: Tensor Sketch
+INFO:root:Metrics: {'RMSE': 0.01571961758268133, 'MAE': 0.01196820963641972}
+INFO:root:Average Execution Time: 0.08659990215301513 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: Weighted MinHash
+INFO:root:Metrics: {'RMSE': 0.06490398933237684, 'MAE': 0.04535490755797194}
+INFO:root:Average Execution Time: 1.2674164524078368 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0.3, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
