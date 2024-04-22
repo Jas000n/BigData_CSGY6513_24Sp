@@ -26,7 +26,6 @@ def run_benchmark(algorithms, dataset_adaptor, num_runs, dataset_type, data_shap
         for run in range(num_runs):
             run_estimates = []
             run_execution_times = []
-            # 将tqdm放在对每个测试样本的处理循环中
             for i in tqdm(range(X_test.shape[0]), desc=f"Running {algorithm.name} run {run+1}/{num_runs}"):
                 estimate, execution_time = algorithm.inner_product_estimate(X_train[i], X_test[i])
                 run_estimates.append(estimate)
@@ -67,7 +66,8 @@ def main():
     algorithms = []
     for algo in args.algo:
         if algo == 'tensor_sketch':
-            algorithms.append(TensorSketchAdaptor("Tensor Sketch", sketch_size=1000))
+            sketch_size = args.data_shape[1]
+            algorithms.append(TensorSketchAdaptor("Tensor Sketch", sketch_size))
         elif algo == 'weighted_minhash':
             algorithms.append(WeightedMinHashAdaptor("Weighted MinHash", num_hashes=1000))
 
