@@ -1,8 +1,8 @@
 import argparse
 import logging
 import numpy as np
-from algorithms.tensor_sketch_adapter import TensorSketchAdapter
-from algorithms.weighted_minhash_adapter import WeightedMinHashAdapter
+from algorithms.tensor_sketch import TensorSketchAdaptor
+from algorithms.weighted_minhash import WeightedMinHashAdaptor
 from datasets.newsgroup20_adaptor import NewsGroup20Adaptor
 from datasets.generate_data import generate_matrices
 from metrics.metric import calculate_metrics
@@ -49,10 +49,11 @@ def main():
     parser = argparse.ArgumentParser(description="Inner Product Estimation Benchmark")
     parser.add_argument('--algo', type=str, choices=['tensor_sketch', 'weighted_minhash'], required=True, action='append', help="what algorithm(s) to use")
     parser.add_argument('--dataset', type=str, choices=['provided', 'generated'], required=True, help="what dataset to use")
+    parser.add_argument('--dataset_name', type=str, default='20newsgroups', help="name of the provided dataset")
     parser.add_argument('--data_shape', type=int, nargs=4, default=[1000, 500, 500, 1000], help="scale of data, in format Matrix1(ROWS, COLS) Matrix2(ROWS, COLS)")
     parser.add_argument('--data_mean', type=float, default=10, help="Mean value of generated data")
     parser.add_argument('--data_deviation', type=float, default=1, help="Deviation of generated data")
-    parser.add_argument('--sparsity', type=float, required=True, default=0, help="sparsity parameter, how many elements in matrix or vector are zeros")
+    parser.add_argument('--sparsity', type=float, default=0, help="sparsity parameter, how many elements in matrix or vector are zeros")
     parser.add_argument('--vector', action='store_true', default=False, help="using vector instead of matrix")
     parser.add_argument('--type', choices=['binary', 'normal'], default="normal", help="type of data, binary or normal")
     parser.add_argument('--precision', choices=['float', 'int'], default='int', help="precision type, float or int")
@@ -66,11 +67,11 @@ def main():
     algorithms = []
     for algo in args.algo:
         if algo == 'tensor_sketch':
-            algorithms.append(TensorSketchAdapter("Tensor Sketch", sketch_size=1000))
+            algorithms.append(TensorSketchAdaptor("Tensor Sketch", sketch_size=1000))
         elif algo == 'weighted_minhash':
-            algorithms.append(WeightedMinHashAdapter("Weighted MinHash", num_hashes=1000))
+            algorithms.append(WeightedMinHashAdaptor("Weighted MinHash", num_hashes=1000))
 
-    dataset_adaptor = load_dataset(args.dataset, config={})
+    dataset_adaptor = load_dataset(args.dataset, args.dataset_name, config={})
     results = run_benchmark(algorithms, dataset_adaptor, args.num_runs, args.dataset, args.data_shape, args.sparsity, args.vector, args.type, args.precision, args.data_mean, args.data_deviation)
 
     for result in results:

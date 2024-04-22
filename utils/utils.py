@@ -2,9 +2,12 @@ import numpy as np
 import pandas as pd
 from datasets.newsgroup20_adaptor import NewsGroup20Adaptor
 
-def load_dataset(dataset_type, config):
+def load_dataset(dataset_type, dataset_name,config):
     if dataset_type == 'provided':
-        dataset_adaptor = NewsGroup20Adaptor(config)
+        if dataset_name == '20newsgroups':
+         dataset_adaptor = NewsGroup20Adaptor(config)
+        # elif dataset_name == '':
+
     elif dataset_type == 'generated':
         dataset_adaptor = None
     else:

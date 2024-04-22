@@ -3,7 +3,7 @@ from algorithms.algorithm_adaptor import algorithm_adaptor
 from datasketch import WeightedMinHashGenerator
 import numpy as np
 
-class WeightedMinHashAdapter(algorithm_adaptor):
+class WeightedMinHashAdaptor(algorithm_adaptor):
     def __init__(self, name, num_hashes):
         super().__init__(name)
         self.num_hashes = num_hashes

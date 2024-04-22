@@ -11,8 +11,8 @@ class NewsGroup20Adaptor(DatasetAdaptor):
         newsgroups_train = fetch_20newsgroups(subset='train')
         newsgroups_test = fetch_20newsgroups(subset='test')
 
-        train_data = resample(newsgroups_train.data, n_samples=1000, random_state=42)
-        test_data = resample(newsgroups_test.data, n_samples=1000, random_state=42)
+        train_data = resample(newsgroups_train.data, n_samples=100, random_state=42)
+        test_data = resample(newsgroups_test.data, n_samples=100, random_state=42)
 
         return train_data, test_data
 
