@@ -17,7 +17,7 @@ def run_benchmark(algorithms, dataset_adaptor, num_runs, dataset_type, data_shap
     else:
         raise ValueError(f"Unsupported dataset type: {dataset_type}")
 
-    X_train, X_test = preprocess_data(dataset_adaptor, (train_data, test_data), dataset_type)
+    matrix1, matrix2 = preprocess_data(dataset_adaptor, (train_data, test_data), dataset_type)
 
     results = []
     for algorithm in algorithms:
@@ -26,14 +26,14 @@ def run_benchmark(algorithms, dataset_adaptor, num_runs, dataset_type, data_shap
         for run in range(num_runs):
             run_estimates = []
             run_execution_times = []
-            for i in tqdm(range(X_test.shape[0]), desc=f"Running {algorithm.name} run {run+1}/{num_runs}"):
-                estimate, execution_time = algorithm.inner_product_estimate(X_train[i], X_test[i])
+            for i in tqdm(range(matrix2.shape[0]), desc=f"Running {algorithm.name} run {run+1}/{num_runs}"):
+                estimate, execution_time = algorithm.inner_product_estimate(matrix1[i], matrix2[i])
                 run_estimates.append(estimate)
                 run_execution_times.append(execution_time)
             estimates.append(run_estimates)
             execution_times.append(run_execution_times)
 
-        metrics = calculate_metrics(X_train, X_test, np.mean(estimates, axis=0))
+        metrics = calculate_metrics(matrix1, matrix2, np.mean(estimates, axis=0))
         avg_execution_time = np.mean(execution_times)
 
         results.append({

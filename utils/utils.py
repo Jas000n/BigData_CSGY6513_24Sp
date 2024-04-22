@@ -16,12 +16,12 @@ def load_dataset(dataset_type, dataset_name,config):
 
 def preprocess_data(dataset_adaptor, data, dataset_type):
     if dataset_type == 'provided':
-        X_train, X_test = dataset_adaptor.preprocess_data(data)
+        matrix1, matrix2 = dataset_adaptor.preprocess_data(data)
     elif dataset_type == 'generated':
-        X_train, X_test = data
+        matrix1, matrix2 = data
     else:
         raise ValueError(f"Unsupported dataset type: {dataset_type}")
-    return X_train, X_test
+    return matrix1, matrix2
 
 def save_results(results):
     df = pd.DataFrame(results)

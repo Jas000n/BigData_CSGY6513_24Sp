@@ -19,19 +19,16 @@ class WeightedMinHashAdaptor(algorithm_adaptor):
 
 
     def generate_minhash(self, matrix):
-        # 处理稀疏矩阵
+
         if hasattr(matrix, 'tocoo'):
             matrix = matrix.tocoo()
-            # 创建一个完整的权重向量，初始值为0，长度等于列数
             weights = np.zeros(matrix.shape[1])
-            # 只更新非零元素的位置
             weights[matrix.col] = matrix.data
         else:
-            # 处理密集矩阵
             matrix = np.array(matrix)
             weights = matrix.flatten()
 
-        dimension = len(weights)  # 确保维度与权重向量的长度一致
+        dimension = len(weights)
         minhash_generator = WeightedMinHashGenerator(dimension, self.num_hashes)
         minhash = minhash_generator.minhash(weights)
         return minhash

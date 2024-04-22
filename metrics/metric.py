@@ -17,8 +17,8 @@ metrics_dict = {
     "custom_metric": custom_metric
 }
 
-def calculate_metrics(X_train, X_test, estimates, metrics=["RMSE", "MAE"]):
-    true_inner_products = [X_train[i].dot(X_test[i].T).toarray()[0][0] for i in range(X_test.shape[0])]
+def calculate_metrics(matrix1, matrix2, estimates, metrics=["RMSE", "MAE"]):
+    true_inner_products = [matrix1[i].dot(matrix2[i].T).toarray()[0][0] for i in range(matrix2.shape[0])]
     metric_results = {}
     for metric_name in metrics:
         metric_func = metrics_dict[metric_name]
