@@ -18,11 +18,4 @@ class algorithm_adaptor:
 
         return estimate, execution_time
 
-    @staticmethod
-    def adjust_array_dimension(array):
-        if array.ndim == 1:
-            return array.reshape(1, -1)
-        elif array.ndim == 2:
-            return array
-        else:
-            raise ValueError(f"Unsupported array dimension: {array.ndim}. Expected 1D or 2D array.")
+

@@ -20,4 +20,8 @@ class NewsGroup20Adaptor(DatasetAdaptor):
         vectorizer = TfidfVectorizer()
         X_train = vectorizer.fit_transform(data[0])
         X_test = vectorizer.transform(data[1])
+        # Print the shape of the output vectors
+        print(f"Training data shape: {X_train.shape}")
+        print(f"Testing data shape: {X_test.shape}")
+        print(f"Vocabulary size: {len(vectorizer.vocabulary_)}")
         return X_train, X_test

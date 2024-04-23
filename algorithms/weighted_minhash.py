@@ -2,6 +2,8 @@ import time
 from algorithms.algorithm_adaptor import algorithm_adaptor
 from datasketch import WeightedMinHashGenerator
 import numpy as np
+from tqdm import tqdm
+
 
 class WeightedMinHashAdaptor(algorithm_adaptor):
     def __init__(self, name, num_hashes):
@@ -17,9 +19,7 @@ class WeightedMinHashAdaptor(algorithm_adaptor):
         execution_time = end_time - start_time
         return estimate, execution_time
 
-
     def generate_minhash(self, matrix):
-
         if hasattr(matrix, 'tocoo'):
             matrix = matrix.tocoo()
             weights = np.zeros(matrix.shape[1])
@@ -32,6 +32,3 @@ class WeightedMinHashAdaptor(algorithm_adaptor):
         minhash_generator = WeightedMinHashGenerator(dimension, self.num_hashes)
         minhash = minhash_generator.minhash(weights)
         return minhash
-
-
-

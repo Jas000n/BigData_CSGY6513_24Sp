@@ -12,26 +12,32 @@ from tqdm import tqdm
 def run_benchmark(algorithms, dataset_adaptor, num_runs, dataset_type, data_shape, sparsity, vector, type, precision, mean, deviation):
     if dataset_type == 'provided':
         train_data, test_data = dataset_adaptor.load_data()
+        matrix1, matrix2 = preprocess_data(dataset_adaptor, (train_data, test_data), dataset_type)
     elif dataset_type == 'generated':
-        train_data, test_data = generate_matrices(data_shape, sparsity, vector, type, precision, mean, deviation)
+        matrix1, matrix2 = generate_matrices(data_shape, sparsity, vector, type, precision, mean, deviation)
     else:
         raise ValueError(f"Unsupported dataset type: {dataset_type}")
 
-    matrix1, matrix2 = preprocess_data(dataset_adaptor, (train_data, test_data), dataset_type)
+
 
     results = []
     for algorithm in algorithms:
         estimates = []
         execution_times = []
-        for run in range(num_runs):
-            run_estimates = []
-            run_execution_times = []
-            for i in tqdm(range(matrix2.shape[0]), desc=f"Running {algorithm.name} run {run+1}/{num_runs}"):
-                estimate, execution_time = algorithm.inner_product_estimate(matrix1[i], matrix2[i])
-                run_estimates.append(estimate)
-                run_execution_times.append(execution_time)
-            estimates.append(run_estimates)
-            execution_times.append(run_execution_times)
+        for run in tqdm(range(num_runs), desc=f"Running {algorithm.name}"):
+            if dataset_type == 'generated':
+                estimate, execution_time = algorithm.inner_product_estimate(matrix1, matrix2)
+                estimates.append([estimate])
+                execution_times.append(execution_time)
+            elif dataset_type == 'provided':
+                run_estimates = []
+                run_execution_times = []
+                for i in tqdm(range(matrix2.shape[0]), desc=f"Running {algorithm.name} run {run+1}/{num_runs}"):
+                    estimate, execution_time = algorithm.inner_product_estimate(matrix1[i], matrix2[i])
+                    run_estimates.append(estimate)
+                    run_execution_times.append(execution_time)
+                estimates.append(run_estimates)
+                execution_times.append(run_execution_times)
 
         metrics = calculate_metrics(matrix1, matrix2, np.mean(estimates, axis=0))
         avg_execution_time = np.mean(execution_times)
@@ -69,7 +75,7 @@ def main():
             sketch_size = args.data_shape[1]
             algorithms.append(TensorSketchAdaptor("Tensor Sketch", sketch_size))
         elif algo == 'weighted_minhash':
-            algorithms.append(WeightedMinHashAdaptor("Weighted MinHash", num_hashes=1000))
+            algorithms.append(WeightedMinHashAdaptor("Weighted MinHash", num_hashes=64))
 
     dataset_adaptor = load_dataset(args.dataset, args.dataset_name, config={})
     results = run_benchmark(algorithms, dataset_adaptor, args.num_runs, args.dataset, args.data_shape, args.sparsity, args.vector, args.type, args.precision, args.data_mean, args.data_deviation)

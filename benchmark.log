@@ -87,3 +87,111 @@ INFO:root:Algorithm: Weighted MinHash
 INFO:root:Metrics: {'RMSE': 0.06490398933237684, 'MAE': 0.04535490755797194}
 INFO:root:Average Execution Time: 1.4372781324386597 seconds
 INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=2)
+INFO:root:Algorithm: Tensor Sketch
+INFO:root:Metrics: {'RMSE': 0.03165806958822066, 'MAE': 0.025026001484758535}
+INFO:root:Average Execution Time: 0.04591450929641724 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: Weighted MinHash
+INFO:root:Metrics: {'RMSE': 0.06490398933237684, 'MAE': 0.04535490755797194}
+INFO:root:Average Execution Time: 1.2467486429214478 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=2)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=2)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='provided', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=2)
+INFO:root:Algorithm: Tensor Sketch
+INFO:root:Metrics: {'RMSE': 0.08530787376059971, 'MAE': 0.058282720968716756}
+INFO:root:Average Execution Time: 0.04701168298721314 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Algorithm: Tensor Sketch
+INFO:root:Metrics: {'RMSE': 246673.6, 'MAE': 246673.6}
+INFO:root:Average Execution Time: 0.012794971466064453 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Algorithm: Tensor Sketch
+INFO:root:Metrics: {'RMSE': 223249.5, 'MAE': 223249.5}
+INFO:root:Average Execution Time: 0.012277841567993164 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['tensor_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Algorithm: Tensor Sketch
+INFO:root:Metrics: {'RMSE': 251538.52, 'MAE': 251538.52}
+INFO:root:Average Execution Time: 0.013937950134277344 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: Weighted MinHash
+INFO:root:Metrics: {'RMSE': 251.87240173339845, 'MAE': 251.87240173339845}
+INFO:root:Average Execution Time: 156.4987690448761 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=0.0, data_deviation=1.0, sparsity=0.1, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=10)
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=0.0, data_deviation=1.0, sparsity=0.1, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=10)
+INFO:root:Algorithm: Tensor Sketch
+INFO:root:Metrics: {'RMSE': 582.1445, 'MAE': 582.1445}
+INFO:root:Average Execution Time: 0.011468338966369628 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: Weighted MinHash
+INFO:root:Metrics: {'RMSE': 13.901418685913086, 'MAE': 13.901418685913086}
+INFO:root:Average Execution Time: 8.41025893688202 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=2)
+INFO:root:Algorithm: Tensor Sketch
+INFO:root:Metrics: {'RMSE': 0.08005908169212148, 'MAE': 0.05576745403577405}
+INFO:root:Average Execution Time: 0.04570948839187622 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: Weighted MinHash
+INFO:root:Metrics: {'RMSE': 0.0306937242767349, 'MAE': 0.02590153637575448}
+INFO:root:Average Execution Time: 0.08432608485221862 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1)
+INFO:root:Algorithm: Tensor Sketch
+INFO:root:Metrics: {'RMSE': 270446.8, 'MAE': 270446.8}
+INFO:root:Average Execution Time: 0.014721870422363281 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: Weighted MinHash
+INFO:root:Metrics: {'RMSE': 197.14927673339844, 'MAE': 197.14927673339844}
+INFO:root:Average Execution Time: 8.06277585029602 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 1000, 500], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=5)
+INFO:root:Algorithm: Tensor Sketch
+INFO:root:Metrics: {'RMSE': 242226.81, 'MAE': 242226.81}
+INFO:root:Average Execution Time: 0.013067007064819336 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: Weighted MinHash
+INFO:root:Metrics: {'RMSE': 234.70639038085938, 'MAE': 234.70639038085938}
+INFO:root:Average Execution Time: 8.195434045791625 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['tensor_sketch', 'weighted_minhash'], dataset='provided', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=10, data_deviation=1, sparsity=0, vector=False, type='normal', precision='int', metrics=['RMSE', 'MAE'], num_runs=2)
+INFO:root:Algorithm: Tensor Sketch
+INFO:root:Metrics: {'RMSE': 0.08378151205796897, 'MAE': 0.059373062110443534}
+INFO:root:Average Execution Time: 0.04895899176597595 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: Weighted MinHash
+INFO:root:Metrics: {'RMSE': 0.0306937242767349, 'MAE': 0.02590153637575448}
+INFO:root:Average Execution Time: 0.08337207674980164 seconds
+INFO:root:------------------------

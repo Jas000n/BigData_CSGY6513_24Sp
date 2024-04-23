@@ -58,12 +58,12 @@ def generate_matrices(data_shape, sparsity, use_vector, data_type, precision,mea
 
 if __name__ == '__main__':
     # Example usage:
-    data_scale = ((1000, 500), (500, 1000))  # Dimensions for two matrices
-    sparsity = 0.3 # 30% elements are zero
-    use_vector = False  # Generate matrices, not vectors
-    data_type = 'normal'  # Normal continuous values
-    precision = 'float'  # Floating point numbers
-
-    mat1, mat2 = generate_matrices(data_scale, sparsity, use_vector, data_type, precision,1,1)
-    print("Matrix 1:\n", mat1)
-    print("Matrix 2:\n", mat2)
+    # data_scale = ((1000, 1000), (1000, 1000))  # Dimensions for two matrices
+    # sparsity = 0.3 # 30% elements are zero
+    # use_vector = False  # Generate matrices, not vectors
+    # data_type = 'normal'  # Normal continuous values
+    # precision = 'float'  # Floating point numbers
+    #
+    # mat1, mat2 = generate_matrices(data_scale, sparsity, use_vector, data_type, precision,1,1)
+    print("Matrix 1:\n", 1)
+    print("Matrix 2:\n", 2)
