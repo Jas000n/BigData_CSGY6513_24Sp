@@ -6,7 +6,7 @@ def generate_matrices(data_shape, sparsity, use_vector, data_type, precision,mea
 
     Args:
         data_shape (tuple): A tuple containing two tuples, each specifies the dimensions
-                            (ROWS, COLS) of the matrices to be generated, in format like ((1000, 500), (500, 1000))
+                            (ROWS, COLS) of the matrices to be generated, in format like (1000, 500, 500, 1000)
         sparsity (float): The fraction of elements in the matrices that are zero.
         use_vector (bool): If True, generates vectors instead of matrices.
         data_type (str): 'binary' for binary matrices, 'normal' for normal continuous values.
@@ -58,12 +58,12 @@ def generate_matrices(data_shape, sparsity, use_vector, data_type, precision,mea
 
 if __name__ == '__main__':
     # Example usage:
-    # data_scale = ((1000, 1000), (1000, 1000))  # Dimensions for two matrices
-    # sparsity = 0.3 # 30% elements are zero
-    # use_vector = False  # Generate matrices, not vectors
-    # data_type = 'normal'  # Normal continuous values
-    # precision = 'float'  # Floating point numbers
-    #
-    # mat1, mat2 = generate_matrices(data_scale, sparsity, use_vector, data_type, precision,1,1)
-    print("Matrix 1:\n", 1)
-    print("Matrix 2:\n", 2)
+    data_scale = (1000, 100, 100, 1000)  # Dimensions for two matrices
+    sparsity = 0.3 # 30% elements are zero
+    use_vector = False  # Generate matrices, not vectors
+    data_type = 'normal'  # Normal continuous values
+    precision = 'float'  # Floating point numbers
+
+    mat1, mat2 = generate_matrices(data_scale, sparsity, use_vector, data_type, precision,1,1)
+    print("Matrix 1:\n", mat1)
+    print("Matrix 2:\n", mat2)
