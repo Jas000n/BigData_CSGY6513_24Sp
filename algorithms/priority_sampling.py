@@ -3,7 +3,7 @@ import time
 import numpy as np
 from tqdm import tqdm
 from datasets import generate_data as generate_data
-from abstract_class import InnerProdSketcher, InnerProdSketch, hash_kwise
+from algorithms.abstract_class import InnerProdSketcher, InnerProdSketch, hash_kwise
 from numba import njit
 from algorithms.algorithm_adaptor import algorithm_adaptor
 
@@ -81,13 +81,14 @@ class PS(InnerProdSketcher):
         sk_values = sk_values[k_min]
         return PSSketch(sk_hashes, sk_values, tau, self.norm)
 class priority_sampling(algorithm_adaptor):
-    def __init__(self):
+    def __init__(self, sketch_size):
         super().__init__("priority_sampling")
+        self.sketch_size = sketch_size
     def inner_product_estimate(self, mat1, mat2):
         time_start = time.time()
         if mat1.ndim == 1 and mat2.ndim == 1:
             # vector mode
-            sketcher = PS(int(mat1.shape[0] / 10), seed=28321931,norm=2)
+            sketcher = PS(sketch_size=self.sketch_size, seed=28321931,norm=2)
             sketchA = sketcher.sketch(mat1)
             sketchB = sketcher.sketch(mat2)
             estimated_inner_product = sketchA.inner_product(sketchB)
@@ -113,9 +114,15 @@ class priority_sampling(algorithm_adaptor):
                     result[i, j] = mat1_sketch[i].inner_product(mat2_sketch[j])
             time_end = time.time()
             return result, time_end - time_start
+
+    def sketch(self, vector, sketch_size):
+        sketcher = PS(sketch_size=self.sketch_size, seed=28321931,norm=2)
+        return sketcher.sketch(vector)
+
+
 if __name__ == '__main__':
-    vectorA, vectorB = generate_data.generate_matrices((1000, 1000, 1000, 1000), 0.3, False, "normal", "float", 100, 2)
-    sketcher = priority_sampling()
+    vectorA, vectorB = generate_data.generate_matrices((100, 1000, 1000, 100), 0.3, False, "normal", "float", 100, 2)
+    sketcher = priority_sampling(100)
     estimated_inner_product, time = sketcher.inner_product_estimate(vectorA, vectorB)
     print("Estimated Inner Product:", estimated_inner_product)
     print(vectorA.dot(vectorB))

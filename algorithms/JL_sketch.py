@@ -2,7 +2,7 @@ import time
 
 import numpy as np
 import scipy.sparse as sparse
-from abstract_class import InnerProdSketcher, InnerProdSketch
+from algorithms.abstract_class import InnerProdSketcher, InnerProdSketch
 from datasets import generate_data as generate_data
 from algorithms.algorithm_adaptor import algorithm_adaptor
 from tqdm import tqdm
@@ -107,13 +107,14 @@ class CS(InnerProdSketcher):
 
 
 class JL_sketch(algorithm_adaptor):
-    def __init__(self):
+    def __init__(self,sketch_size):
         super().__init__("JL_sketch")
+        self.sketch_size = sketch_size
     def inner_product_estimate(self, mat1, mat2):
         time_start = time.time()
         if mat1.ndim == 1 and mat2.ndim == 1:
             # vector mode
-            sketcher = JL(sketch_size=int(mat1.shape[0] / 10), seed=28321931)
+            sketcher = JL(sketch_size=int(self.sketch_size), seed=28321931)
             sketchA = sketcher.sketch(mat1)
             sketchB = sketcher.sketch(mat2)
             estimated_inner_product = sketchA.inner_product(sketchB)
@@ -127,24 +128,25 @@ class JL_sketch(algorithm_adaptor):
             #     mat1_sketch.append(sketcher.sketch(mat1[i]))
             # for i in range(0,mat2.shape[1]):
             #     mat2_sketch.append(sketcher.sketch(mat2[:, i]))
-            for i in tqdm(range(mat1.shape[0]), desc="JL Sketching mat1 rows"):
+            for i in range(mat1.shape[0]):
                 mat1_sketch.append(sketcher.sketch(mat1[i]))
-
-            for i in tqdm(range(mat2.shape[1]), desc="JL Sketching mat2 columns"):
+            for i in range(mat2.shape[1]):
                 mat2_sketch.append(sketcher.sketch(mat2[:, i]))
-            result = np.zeros((mat1.shape[0],mat2.shape[1]))
-
-            for i in range(0,mat1.shape[0]):
-                for j in range(0,mat2.shape[1]):
+            result = np.zeros((mat1.shape[0], mat2.shape[1]))
+            for i in range(mat1.shape[0]):
+                for j in range(mat2.shape[1]):
                     result[i, j] = mat1_sketch[i].inner_product(mat2_sketch[j])
             time_end = time.time()
             return result, time_end - time_start
 
+    def sketch(self, vector, sketch_size):
+        sketcher = JL(sketch_size=sketch_size, seed=28321931)
+        return sketcher.sketch(vector)
 if __name__ == '__main__':
 
 
-    vectorA,vectorB = generate_data.generate_matrices((1000,1000,1000,1000),0.3,False,"normal","float",100,2)
-    sketcher = JL_sketch()
+    vectorA,vectorB = generate_data.generate_matrices((1,1000,1000,1),0.3,False,"normal","float",100,2)
+    sketcher = JL_sketch(sketch_size=100)
     estimated_inner_product, time = sketcher.inner_product_estimate(vectorA, vectorB)
     print("Estimated Inner Product:", estimated_inner_product)
     print(vectorA.dot(vectorB))

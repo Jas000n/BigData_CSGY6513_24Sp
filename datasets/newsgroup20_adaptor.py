@@ -13,7 +13,6 @@ class NewsGroup20Adaptor(DatasetAdaptor):
 
         train_data = resample(newsgroups_train.data, n_samples=100, random_state=42)
         test_data = resample(newsgroups_test.data, n_samples=100, random_state=42)
-
         return train_data, test_data
 
     def preprocess_data(self, data):
