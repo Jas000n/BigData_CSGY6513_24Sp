@@ -130,7 +130,6 @@ class JL_sketch(algorithm_adaptor):
             for i in tqdm(range(mat1.shape[0]), desc="JL Sketching mat1 rows"):
                 mat1_sketch.append(sketcher.sketch(mat1[i]))
 
-            # 对 mat2 的每一列应用 sketch 函数，并记录进度
             for i in tqdm(range(mat2.shape[1]), desc="JL Sketching mat2 columns"):
                 mat2_sketch.append(sketcher.sketch(mat2[:, i]))
             result = np.zeros((mat1.shape[0],mat2.shape[1]))
@@ -142,8 +141,7 @@ class JL_sketch(algorithm_adaptor):
             return result, time_end - time_start
 
 if __name__ == '__main__':
-    import numpy as np
-    import random
+
 
     vectorA,vectorB = generate_data.generate_matrices((1000,1000,1000,1000),0.3,False,"normal","float",100,2)
     sketcher = JL_sketch()
