@@ -142,6 +142,14 @@ class JL_sketch(algorithm_adaptor):
     def sketch(self, vector, sketch_size):
         sketcher = JL(sketch_size=sketch_size, seed=28321931)
         return sketcher.sketch(vector)
+class CS_sketch(algorithm_adaptor):
+    def __init__(self, sketch_size):
+        super().__init__("CSS_sketch")
+        self.sketch_size = sketch_size
+
+    def sketch(self, vector, sketch_size):
+        sketcher = CS(sketch_size=sketch_size, seed=28321931)
+        return sketcher.sketch(vector)
 if __name__ == '__main__':
 
 
