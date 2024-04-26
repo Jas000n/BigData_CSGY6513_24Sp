@@ -19,18 +19,11 @@ metrics_dict = {
 }
 
 def calculate_metrics(matrix1, matrix2, estimates, metrics=["RMSE", "MAE"]):
-    if matrix1.ndim == 2 and matrix2.ndim == 2:
-        true_inner_product = matrix1.dot(matrix2.T)
-        if scipy.sparse.issparse(true_inner_product):
-            true_inner_product = true_inner_product.toarray()
-        if true_inner_product.ndim == 2:
-            true_inner_product = true_inner_product[0, 0]
-        true_inner_products = np.full(len(estimates), true_inner_product)
-    else:
-        true_inner_products = np.array([matrix1[i].dot(matrix2[i].T).toarray()[0][0] for i in range(len(estimates))])
-
+    true_inner_product = matrix1.dot(matrix2)
+    # breakpoint()
     metric_results = {}
-    for metric_name in metrics:
-        metric_func = metrics_dict[metric_name]
-        metric_results[metric_name] = metric_func(true_inner_products, estimates)
+    for metric_name, metric_func in metrics_dict.items():
+        if metric_name =="custom_metric":
+            continue
+        metric_results[metric_name] = metric_func(true_inner_product, estimates)
     return metric_results

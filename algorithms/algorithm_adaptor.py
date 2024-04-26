@@ -17,5 +17,7 @@ class algorithm_adaptor:
         execution_time = end_time - start_time
 
         return estimate, execution_time
-
-
+     def sketch(self, vector, sketch_size):
+         #return sketched vector with shape 1*sketch_size
+         pass
+        
