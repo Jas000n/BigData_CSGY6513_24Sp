@@ -4,6 +4,7 @@ import numpy as np
 from algorithms.JL_sketch import JL_sketch
 from algorithms.priority_sampling import priority_sampling
 from algorithms.tensor_sketch import TensorSketchAdaptor
+from algorithms.threshold_sampling import threshold_sampling
 from algorithms.weighted_minhash import WeightedMinHashAdaptor
 from datasets.newsgroup20_adaptor import NewsGroup20Adaptor
 from datasets.generate_data import generate_matrices
@@ -58,7 +59,7 @@ def run_benchmark(algorithms, dataset_adaptor, num_runs, dataset_type, data_shap
 
 def main():
     parser = argparse.ArgumentParser(description="Inner Product Estimation Benchmark")
-    parser.add_argument('--algo', type=str, choices=['tensor_sketch', 'weighted_minhash','JL_sketch','priority_sampling'], required=True, action='append', help="what algorithm(s) to use")
+    parser.add_argument('--algo', type=str, choices=['tensor_sketch', 'weighted_minhash','JL_sketch','priority_sampling','threshold_sampling'], required=True, action='append', help="what algorithm(s) to use")
     parser.add_argument('--dataset', type=str, choices=['provided', 'generated'], required=True, help="what dataset to use")
     parser.add_argument('--dataset_name', type=str, default='20newsgroups', help="name of the provided dataset")
     parser.add_argument('--data_shape', type=int, nargs=4, default=[1000, 500, 500, 1000], help="scale of data, in format Matrix1(ROWS, COLS) Matrix2(ROWS, COLS)")
@@ -88,6 +89,8 @@ def main():
             algorithms.append(JL_sketch(sketch_size=args.sketch_size))
         elif algo == 'priority_sampling':
             algorithms.append(priority_sampling(args.sketch_size))
+        elif algo == 'threshold_sampling':
+            algorithms.append(threshold_sampling(args.sketch_size))
 
     dataset_adaptor = load_dataset(args.dataset, args.dataset_name, config={})
     results = run_benchmark(algorithms, dataset_adaptor, args.num_runs, args.dataset, args.data_shape, args.sparsity, args.vector, args.type, args.precision, args.data_mean, args.data_deviation,args.sketch_size)
