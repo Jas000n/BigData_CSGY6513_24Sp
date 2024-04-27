@@ -123,7 +123,7 @@ class JL_sketch(algorithm_adaptor):
         else:
             mat1_sketch = []
             mat2_sketch = []
-            sketcher = JL(sketch_size=int(mat1.shape[1] / 10), seed=28321931)
+            sketcher = JL(sketch_size=int(self.sketch_size), seed=28321931)
             # for i in range(0,mat1.shape[0]):
             #     mat1_sketch.append(sketcher.sketch(mat1[i]))
             # for i in range(0,mat2.shape[1]):
@@ -141,6 +141,14 @@ class JL_sketch(algorithm_adaptor):
 
     def sketch(self, vector, sketch_size):
         sketcher = JL(sketch_size=sketch_size, seed=28321931)
+        return sketcher.sketch(vector)
+class CS_sketch(algorithm_adaptor):
+    def __init__(self, sketch_size):
+        super().__init__("CSS_sketch")
+        self.sketch_size = sketch_size
+
+    def sketch(self, vector, sketch_size):
+        sketcher = CS(sketch_size=sketch_size, seed=28321931)
         return sketcher.sketch(vector)
 if __name__ == '__main__':
 
