@@ -54,7 +54,7 @@ def calculate_matrices_multiplication(mat1_sketches, mat2_sketches):
     result = np.zeros((len(mat1_sketches), len(mat2_sketches)))
     if not isinstance(mat1_sketches[0], np.ndarray):
     # breakpoint()
-        for i in tqdm(range(0, len(mat1_sketches)), desc="Processing mat1_sketches"):
+        for i in range(0, len(mat1_sketches)):
         # Your code here using mat1_sketches[i]
             for j in range(0, len(mat2_sketches)):
                 result[i, j] = mat1_sketches[i].inner_product(mat2_sketches[j])
