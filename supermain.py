@@ -1,22 +1,30 @@
 import argparse
 import pandas as pd
+
+from algorithms.KMV_MH_sketch import KMV_sketch, MH_sketch
+from algorithms.base_line import base_line
 from main import run_benchmark
 from utils.utils import load_dataset, save_results
-from algorithms.JL_sketch import JL_sketch
+from algorithms.JL_sketch import JL_sketch, CS_sketch
 from algorithms.priority_sampling import priority_sampling
+from algorithms.threshold_sampling import threshold_sampling
 from tqdm import tqdm
 
 algorithms = {
     'JL_sketch': JL_sketch,
-    'priority_sampling': priority_sampling
+    'priority_sampling': priority_sampling,
+    'threshold_sampling': threshold_sampling,
+    'CS_sketch': CS_sketch,
+    'KMV_sketch': KMV_sketch,
+    'MH_sketch': MH_sketch,
 }
 
 datasets = {
     '20newsgroups': {'type': 'provided', 'config': {}},
-    'generated': {'type': 'generated', 'config': {'data_shape': [50, 500, 500, 50], 'sparsity': [0.3,0.6,0.9], 'vector': False, 'type': 'normal', 'precision': 'float', 'mean': 1, 'deviation': 1}}
+    'generated': {'type': 'generated', 'config': {'data_shape': [10, 750, 750, 10], 'sparsity': [0.3,0.6,0.9], 'vector': False, 'type': 'normal', 'precision': 'float', 'mean': 1, 'deviation': 1}}
 }
 
-sketch_sizes = [10,50,100,200]
+sketch_sizes = [10,20,40,80,160,320]
 num_runs = 3
 
 total_runs =  len(algorithms) * len(sketch_sizes) * num_runs
