@@ -195,3 +195,68 @@ INFO:root:Algorithm: Weighted MinHash
 INFO:root:Metrics: {'RMSE': 0.0306937242767349, 'MAE': 0.02590153637575448}
 INFO:root:Average Execution Time: 0.08337207674980164 seconds
 INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['priority_sampling', 'JL_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1, sketch_size=10)
+INFO:root:Algorithm: priority_sampling
+INFO:root:Metrics: {'RMSE': 243.83240767157352, 'MAE': 183.66777533886693}
+INFO:root:Average Execution Time: 62.0084969997406 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: JL_sketch
+INFO:root:Metrics: {'RMSE': 327.0718663413994, 'MAE': 259.4823858811622}
+INFO:root:Average Execution Time: 0.7653567790985107 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['priority_sampling', 'JL_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1, sketch_size=10)
+INFO:root:Algorithm: priority_sampling
+INFO:root:Metrics: {'RMSE': 239.45179356218844, 'MAE': 178.96447947653908}
+INFO:root:Average Execution Time: 63.23368000984192 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: JL_sketch
+INFO:root:Metrics: {'RMSE': 328.20622024417685, 'MAE': 258.76256852156513}
+INFO:root:Average Execution Time: 1.110050916671753 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['priority_sampling', 'JL_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[1000, 500, 500, 1000], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1, sketch_size=10)
+INFO:root:Arguments: Namespace(algo=['priority_sampling', 'JL_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[10, 5, 5, 10], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1, sketch_size=10)
+INFO:root:Algorithm: priority_sampling
+INFO:root:Metrics: {'RMSE': 2.3394161162200064, 'MAE': 1.6193580726975447}
+INFO:root:Average Execution Time: 0.0024750232696533203 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: JL_sketch
+INFO:root:Metrics: {'RMSE': 3.8937144304754208, 'MAE': 2.7393734415795854}
+INFO:root:Average Execution Time: 0.0005779266357421875 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['priority_sampling', 'JL_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[10, 5, 5, 10], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1, sketch_size=10)
+INFO:root:Arguments: Namespace(algo=['priority_sampling', 'JL_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[10, 5, 5, 10], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1, sketch_size=10)
+INFO:root:Algorithm: priority_sampling
+INFO:root:Metrics: {'RMSE': 1.1842706575638722, 'MAE': 0.7523691202070623}
+INFO:root:Average Execution Time: 0.0022430419921875 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: JL_sketch
+INFO:root:Metrics: {'RMSE': 2.1103490385537076, 'MAE': 1.5940788820933272}
+INFO:root:Average Execution Time: 0.00029397010803222656 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['priority_sampling', 'JL_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[10, 5, 5, 10], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1, sketch_size=10)
+INFO:root:Algorithm: priority_sampling
+INFO:root:Metrics: {'RMSE': 2.242384391705559, 'MAE': 1.524700864172212}
+INFO:root:Average Execution Time: 0.0018107891082763672 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: JL_sketch
+INFO:root:Metrics: {'RMSE': 1.8880412798197468, 'MAE': 1.286646432155214}
+INFO:root:Average Execution Time: 0.0002980232238769531 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['priority_sampling', 'JL_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[10, 5, 5, 10], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1, sketch_size=10)
+INFO:root:Algorithm: priority_sampling
+INFO:root:Metrics: {'RMSE': 1.4861463358293385, 'MAE': 1.0257941661958714}
+INFO:root:Average Execution Time: 0.002849102020263672 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: JL_sketch
+INFO:root:Metrics: {'RMSE': 1.6600857869856316, 'MAE': 1.3206561011476683}
+INFO:root:Average Execution Time: 0.0003173351287841797 seconds
+INFO:root:------------------------
+INFO:root:Arguments: Namespace(algo=['priority_sampling', 'JL_sketch'], dataset='generated', dataset_name='20newsgroups', data_shape=[10, 5, 5, 10], data_mean=1.0, data_deviation=1.0, sparsity=0.3, vector=False, type='normal', precision='float', metrics=['RMSE', 'MAE'], num_runs=1, sketch_size=10)
+INFO:root:Algorithm: priority_sampling
+INFO:root:Metrics: {'RMSE': 1.7127708110635527, 'MAE': 1.1206292907075985}
+INFO:root:Average Execution Time: 0.002996206283569336 seconds
+INFO:root:------------------------
+INFO:root:Algorithm: JL_sketch
+INFO:root:Metrics: {'RMSE': 2.4669730555772524, 'MAE': 1.7646184037392434}
+INFO:root:Average Execution Time: 0.00031375885009765625 seconds
+INFO:root:------------------------

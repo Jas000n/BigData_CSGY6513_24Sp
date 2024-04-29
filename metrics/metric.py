@@ -20,10 +20,11 @@ metrics_dict = {
 
 def calculate_metrics(matrix1, matrix2, estimates, metrics=["RMSE", "MAE"]):
     true_inner_product = matrix1.dot(matrix2)
-    # breakpoint()
     metric_results = {}
     for metric_name, metric_func in metrics_dict.items():
-        if metric_name =="custom_metric":
-            continue
-        metric_results[metric_name] = metric_func(true_inner_product, estimates)
+        if metric_name == "RMSE":
+            metric_results[metric_name] = RMSE(true_inner_product, estimates)
+        elif metric_name == "MAE":
+            metric_results[metric_name] = MAE(true_inner_product, estimates)
+        # 添加其他度量的计算
     return metric_results
