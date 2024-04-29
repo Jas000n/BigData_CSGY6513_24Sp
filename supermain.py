@@ -17,6 +17,7 @@ algorithms = {
     'CS_sketch': CS_sketch,
     'KMV_sketch': KMV_sketch,
     'MH_sketch': MH_sketch,
+    'base_line': base_line,
 }
 
 datasets = {

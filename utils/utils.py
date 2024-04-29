@@ -63,6 +63,11 @@ def calculate_matrices_multiplication(mat1_sketches, mat2_sketches):
     else:
         for i in range(0, len(mat1_sketches)):
             for j in range(0, len(mat2_sketches)):
-                result[i, j] = mat1_sketches[i].dot(mat2_sketches[j])
+                result[i, j] = vector_multiply(mat1_sketches[i],mat2_sketches[j])
         time_end = time.time()
         return result, time_end - time_start
+def vector_multiply(vector1, vector2):
+    sum = 0
+    for i in range(len(vector1)):
+        sum += vector1[i] * vector2[i]
+    return sum

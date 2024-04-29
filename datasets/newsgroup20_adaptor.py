@@ -22,7 +22,7 @@ class NewsGroup20Adaptor(DatasetAdaptor):
         # # Print the shape of the output vectors
         # print(f"Training data shape: {X_train.shape}")
         # print(f"Testing data shape: {X_test.shape}")
-        print(f"Vocabulary size: {len(vectorizer.vocabulary_)}")
+ #       print(f"Vocabulary size: {len(vectorizer.vocabulary_)}")
         #(5,490)
         #(10,751)
         #(100,5580)
