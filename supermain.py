@@ -22,13 +22,13 @@ algorithms = {
 
 datasets = {
     '20newsgroups': {'type': 'provided', 'config': {}},
-    'generated': {'type': 'generated', 'config': {'data_shape': [10, 750, 750, 10], 'sparsity': [0.3,0.6,0.9], 'vector': False, 'type': 'normal', 'precision': 'float', 'mean': 1, 'deviation': 1}}
+    'generated': {'type': 'generated', 'config': {'data_shape': [30,1911,1911,30], 'sparsity': [0.05,0.5,0.95], 'vector': False, 'type': 'normal', 'precision': 'float', 'mean': 1, 'deviation': 1}}
 }
 
-sketch_sizes = [10,20,40,80,160,320]
-num_runs = 3
+sketch_sizes = [100,300,500,700,900]
+num_runs = 1
 
-total_runs =  len(algorithms) * len(sketch_sizes) * num_runs
+total_runs =  len(algorithms) * len(sketch_sizes) * num_runs * 2
 
 pbar = tqdm(total=total_runs, desc="Total progress", position=0, leave=True)
 

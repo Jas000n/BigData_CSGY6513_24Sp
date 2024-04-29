@@ -11,8 +11,8 @@ class NewsGroup20Adaptor(DatasetAdaptor):
         newsgroups_train = fetch_20newsgroups(subset='train')
         newsgroups_test = fetch_20newsgroups(subset='test')
 
-        train_data = resample(newsgroups_train.data, n_samples=10, random_state=42)
-        test_data = resample(newsgroups_test.data, n_samples=10, random_state=42)
+        train_data = resample(newsgroups_train.data, n_samples=30, random_state=42)
+        test_data = resample(newsgroups_test.data, n_samples=30, random_state=42)
         return train_data, test_data
 
     def preprocess_data(self, data):
@@ -22,8 +22,10 @@ class NewsGroup20Adaptor(DatasetAdaptor):
         # # Print the shape of the output vectors
         # print(f"Training data shape: {X_train.shape}")
         # print(f"Testing data shape: {X_test.shape}")
- #       print(f"Vocabulary size: {len(vectorizer.vocabulary_)}")
+        # print(f"Vocabulary size: {len(vectorizer.vocabulary_)}")
         #(5,490)
         #(10,751)
+        #(30,1911)
+        #(50,3036)
         #(100,5580)
         return X_train, X_test

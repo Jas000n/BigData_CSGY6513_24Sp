@@ -22,25 +22,27 @@ sns.set_style("whitegrid")
 sns.set_context("notebook", font_scale=1.2, rc={"lines.linewidth": 2.5})
 plt.rcParams["figure.figsize"] = (12, 8)
 
-# 算法在20newsgroups数据集上的性能比较图
-# 创建一个包含两个子图的图表
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 8))
-# 绘制RMSE子图
+# 算法在20newsgroups数据集上的性能比较图 (RMSE)
+plt.figure(figsize=(12, 8))
 sns.lineplot(x='sketch_size', y='RMSE', hue='algorithm', data=results_df[results_df['dataset'] == '20newsgroups'],
-             marker='o', ax=ax1)
-ax1.set_xlabel('Sketch Size')
-ax1.set_ylabel('RMSE')
-ax1.set_title('RMSE Performance on 20newsgroups Dataset')
-ax1.legend(title='Algorithm', loc='upper right')
-# 绘制MAE子图
-sns.lineplot(x='sketch_size', y='MAE', hue='algorithm', data=results_df[results_df['dataset'] == '20newsgroups'],
-             marker='o', ax=ax2)
-ax2.set_xlabel('Sketch Size')
-ax2.set_ylabel('MAE')
-ax2.set_title('MAE Performance on 20newsgroups Dataset')
-ax2.legend(title='Algorithm', loc='upper right')
+             marker='o')
+plt.xlabel('Sketch Size')
+plt.ylabel('RMSE')
+plt.title('Algorithm Performance on 20newsgroups Dataset (RMSE)')
+plt.legend(title='Algorithm', loc='center left', bbox_to_anchor=(1, 0.5))
 plt.tight_layout()
-plt.savefig(os.path.join(plot_dir, '20newsgroups_performance.png'), dpi=300)
+plt.savefig(os.path.join(plot_dir, '20newsgroups_performance_rmse.png'), dpi=300, bbox_inches='tight')
+
+# 算法在20newsgroups数据集上的性能比较图 (MAE)
+plt.figure(figsize=(12, 8))
+sns.lineplot(x='sketch_size', y='MAE', hue='algorithm', data=results_df[results_df['dataset'] == '20newsgroups'],
+             marker='o')
+plt.xlabel('Sketch Size')
+plt.ylabel('MAE')
+plt.title('Algorithm Performance on 20newsgroups Dataset (MAE)')
+plt.legend(title='Algorithm', loc='center left', bbox_to_anchor=(1, 0.5))
+plt.tight_layout()
+plt.savefig(os.path.join(plot_dir, '20newsgroups_performance_mae.png'), dpi=300, bbox_inches='tight')
 
 # 算法在自己生成的数据集上的性能比较图 (RMSE)
 plt.figure(figsize=(18, 6))
@@ -84,15 +86,30 @@ for i, ax in enumerate(g.axes):
 plt.tight_layout()
 plt.savefig(os.path.join(plot_dir, 'generated_dataset_mae.png'), dpi=300, bbox_inches='tight')
 
-# 绘制算法执行时间比较图
-results_df_avg = results_df.groupby(['algorithm', 'dataset'], as_index=False)['avg_execution_time'].mean()
-
+# 绘制算法执行时间比较图 (20newsgroups)
 plt.figure(figsize=(12, 8))
-sns.barplot(x='algorithm', y='avg_execution_time', hue='dataset', data=results_df_avg, ci=None, palette='muted')
-plt.title('Algorithm Execution Time Comparison (Average across all sparsity and sketch_size settings)')
-plt.xlabel('Algorithm')
-plt.ylabel('Average Execution Time (s)')
+sns.lineplot(x='sketch_size', y='avg_execution_time', hue='algorithm',
+             data=results_df[results_df['dataset'] == '20newsgroups'], marker='o')
+plt.title('Algorithm Execution Time Comparison on 20newsgroups Dataset')
+plt.xlabel('Sketch Size')
+plt.ylabel('Execution Time (s)')
 plt.yscale('log')
-plt.legend(title='Dataset', loc='upper left')
+plt.legend(title='Algorithm', loc='center left', bbox_to_anchor=(1, 0.5))
 plt.tight_layout()
-plt.savefig(os.path.join(plot_dir, 'algorithm_execution_time_comparison.png'), dpi=300)
+plt.savefig(os.path.join(plot_dir, 'algorithm_execution_time_20newsgroups.png'), dpi=300, bbox_inches='tight')
+
+# 计算sketch_size的中位数
+median_sketch_size = results_df['sketch_size'].median()
+
+# 绘制算法执行时间比较图 (generated)
+plt.figure(figsize=(12, 8))
+sns.lineplot(x='sparsity', y='avg_execution_time', hue='algorithm',
+             data=results_df[(results_df['dataset'] == 'generated') & (results_df['sketch_size'] == median_sketch_size)],
+             marker='o')
+plt.title(f'Algorithm Execution Time Comparison on Generated Dataset (Sketch Size: {median_sketch_size})')
+plt.xlabel('Sparsity')
+plt.ylabel('Execution Time (s)')
+plt.yscale('log')
+plt.legend(title=f'Algorithm (Sketch Size: {median_sketch_size})', loc='center left', bbox_to_anchor=(1, 0.5))
+plt.tight_layout()
+plt.savefig(os.path.join(plot_dir, f'algorithm_execution_time_generated_sketchsize_{median_sketch_size}.png'), dpi=300, bbox_inches='tight')
