@@ -7,22 +7,17 @@ import seaborn as sns
 plot_dir = './plot'
 os.makedirs(plot_dir, exist_ok=True)
 
-# 读取实验结果文件
 results_df = pd.read_csv('results.csv')
 
-# 将metrics列从字符串转换为字典
 results_df['metrics'] = results_df['metrics'].apply(eval)
 
-# 提取RMSE和MAE值到单独的列
 results_df['RMSE'] = results_df['metrics'].apply(lambda x: x['RMSE'])
 results_df['MAE'] = results_df['metrics'].apply(lambda x: x['MAE'])
 
-# 设置图表样式
 sns.set_style("whitegrid")
 sns.set_context("notebook", font_scale=1.2, rc={"lines.linewidth": 2.5})
 plt.rcParams["figure.figsize"] = (12, 8)
 
-# 算法在20newsgroups数据集上的性能比较图 (RMSE)
 plt.figure(figsize=(12, 8))
 sns.lineplot(x='sketch_size', y='RMSE', hue='algorithm', data=results_df[results_df['dataset'] == '20newsgroups'],
              marker='o')
@@ -33,7 +28,6 @@ plt.legend(title='Algorithm', loc='center left', bbox_to_anchor=(1, 0.5))
 plt.tight_layout()
 plt.savefig(os.path.join(plot_dir, '20newsgroups_performance_rmse.png'), dpi=300, bbox_inches='tight')
 
-# 算法在20newsgroups数据集上的性能比较图 (MAE)
 plt.figure(figsize=(12, 8))
 sns.lineplot(x='sketch_size', y='MAE', hue='algorithm', data=results_df[results_df['dataset'] == '20newsgroups'],
              marker='o')
@@ -44,7 +38,6 @@ plt.legend(title='Algorithm', loc='center left', bbox_to_anchor=(1, 0.5))
 plt.tight_layout()
 plt.savefig(os.path.join(plot_dir, '20newsgroups_performance_mae.png'), dpi=300, bbox_inches='tight')
 
-# 算法在自己生成的数据集上的性能比较图 (RMSE)
 plt.figure(figsize=(18, 6))
 g = sns.relplot(x='sketch_size', y='RMSE', hue='algorithm', col='sparsity',
                 data=results_df[results_df['dataset'] == 'generated'],
@@ -65,7 +58,6 @@ for i, ax in enumerate(g.axes):
 plt.tight_layout()
 plt.savefig(os.path.join(plot_dir, 'generated_dataset_rmse.png'), dpi=300, bbox_inches='tight')
 
-# 算法在自己生成的数据集上的性能比较图 (MAE)
 plt.figure(figsize=(18, 6))
 g = sns.relplot(x='sketch_size', y='MAE', hue='algorithm', col='sparsity',
                 data=results_df[results_df['dataset'] == 'generated'],
@@ -86,7 +78,6 @@ for i, ax in enumerate(g.axes):
 plt.tight_layout()
 plt.savefig(os.path.join(plot_dir, 'generated_dataset_mae.png'), dpi=300, bbox_inches='tight')
 
-# 绘制算法执行时间比较图 (20newsgroups)
 plt.figure(figsize=(12, 8))
 sns.lineplot(x='sketch_size', y='avg_execution_time', hue='algorithm',
              data=results_df[results_df['dataset'] == '20newsgroups'], marker='o')
@@ -98,10 +89,8 @@ plt.legend(title='Algorithm', loc='center left', bbox_to_anchor=(1, 0.5))
 plt.tight_layout()
 plt.savefig(os.path.join(plot_dir, 'algorithm_execution_time_20newsgroups.png'), dpi=300, bbox_inches='tight')
 
-# 计算sketch_size的中位数
 median_sketch_size = results_df['sketch_size'].median()
 
-# 绘制算法执行时间比较图 (generated)
 plt.figure(figsize=(12, 8))
 sns.lineplot(x='sparsity', y='avg_execution_time', hue='algorithm',
              data=results_df[(results_df['dataset'] == 'generated') & (results_df['sketch_size'] == median_sketch_size)],
