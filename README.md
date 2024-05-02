@@ -27,11 +27,13 @@ python plot.py
 |K-Minimum Values Sketch|||
 |MinHash Sketch|||
 |Base Line|||
-## Include Your Algos & Datasets
+### Datasets
 | Name |      |      |
 |------| ---- | ---- |
 | NewsGroup20|||
 |Self Generated|||
+## Include Your Algos & Datasets
+
 ## Results
 [README.md](README.md)
 ![20newsgroups_performance_mae.png](plot/20newsgroups_performance_mae.png)
@@ -40,3 +42,16 @@ python plot.py
 ![algorithm_execution_time_generated_sketchsize_500.0.png](plot/algorithm_execution_time_generated_sketchsize_500.0.png)
 ![generated_dataset_mae.png](plot/generated_dataset_mae.png)
 ![generated_dataset_rmse.png](plot/generated_dataset_rmse.png)
+## Cite
+If you find our project useful, please cite our project.
+```bibtex
+@misc{bigdata_final_project,
+  title        = {Big Data Final Project},
+  author       = {Shunyu Yao and Haoran Zhou and Stella Holbrook},
+  year         = 2024,
+  howpublished = {GitHub},
+  url          = {https://github.com/Jas000n/BigData_CSGY6513_24Sp},
+  institution  = {New York University}
+}
+
+```
