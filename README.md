@@ -12,30 +12,39 @@ cd BigData_CSGY6513_24Sp
 pip install -r requirements.txt 
 ```
 ### Usage
+To run benchmark:
 ```shell
 python supermain.py
+```
+To plot results:
+```shell
 python plot.py
 ```
+## Project Architecture
+### General Pipeline
+![./pics/img.png](./pics/img.png)
+### Matrix Multiplication Acceleration
+![img.png](./pics/img2.png)
+![img.png](./pics/img3.png)
 ## Algos & Datasets
 ### Sketch Algorithms
-| Name |      |      |
-|------| ---- | ---- |
-|Johnson-Lindenstrauss Sketch |      |      |
-|Priority Sampling  |      |      |
-|Threshold Sampling      |      |      |
- |Count Sketch      |   |   |
-|K-Minimum Values Sketch|||
-|MinHash Sketch|||
-|Base Line|||
+| Sketch Algorithms                      |
+|-----------------------|
+| Johnson-Lindenstrauss Sketch | 
+| Priority Sampling     | 
+| Threshold Sampling    |
+ | Count Sketch          |
+| K-Minimum Values Sketch |
+| MinHash Sketch        |
+| Base Line             |
 ### Datasets
-| Name |      |      |
-|------| ---- | ---- |
-| NewsGroup20|||
-|Self Generated|||
+| Datasets |
+|--| 
+| NewsGroup20|
+|Self Generated|
 ## Include Your Algos & Datasets
 
 ## Results
-[README.md](README.md)
 ![20newsgroups_performance_mae.png](plot/20newsgroups_performance_mae.png)
 ![20newsgroups_performance_rmse.png](plot/20newsgroups_performance_rmse.png)
 ![algorithm_execution_time_20newsgroups.png](plot/algorithm_execution_time_20newsgroups.png)
