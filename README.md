@@ -41,6 +41,9 @@ python plot.py
 | NewsGroup20|
 |Self Generated|
 ## Include Your Algos & Datasets
+Please extend the dataset and algorithm classes by implementing the dataset_adaptor and ensure all its functions are implemented.
+[dataset_adaptor.py](datasets%2Fdataset_adaptor.py)
+[algorithm_adaptor.py](algorithms%2Falgorithm_adaptor.py)
 
 ## Results
 ![20newsgroups_performance_mae.png](plot/20newsgroups_performance_mae.png)
