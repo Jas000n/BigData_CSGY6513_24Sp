@@ -1,8 +1,6 @@
 # BigData_CSGY6513_24Sp
 ## Introduction
-This project focuses on enhancing the efficiency of matrix multiplication across computational applications by benchmarking vector inner product estimation methods. 
-We systematically evaluate various sketching techniques under different data conditions, aiming to optimize computational methodologies in scientific and engineering fields. 
-This repository contains all the code, datasets, and documentation used in our analyses. 
+This project centers on benchmarking vector inner product estimation methods, aiming to enhance computational efficiency in scientific and engineering applications. We provide a systematic evaluation of various sketching techniques under differing data conditions, focusing primarily on inner product estimation. The acceleration of matrix multiplication serves as an extension of our core study. This repository includes all the code, datasets, and documentation used in our analyses.
 
 ## Installation & Usage
 ### Install 
